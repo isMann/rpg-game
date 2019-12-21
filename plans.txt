@@ -1,0 +1,12 @@
+1. outline primary stats:
+Dnd stats:
+Str Con Dex Int Wis Cha
+Other Possibilities:
+HP Atk Def Dodge Mag MDef Spd
+
+2. make some sort of battle system:
+
+3. make some sort of progression system (classes and levels):
+
+4. add a story but I'm not a writer so we'll see how that goes (including enemies and bosses):
+Ride the lightning is pretty cool
