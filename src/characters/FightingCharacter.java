@@ -50,7 +50,7 @@ public class FightingCharacter {
     }
     
     public int getHP() {
-        return spd;
+        return HP;
     }
     
     public int getStr() {

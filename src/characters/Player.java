@@ -19,10 +19,15 @@ public class Player extends FightingCharacter{
                 str = def = mag = mDef = spd = 0;
                 sum = str + def + mag + mDef + spd;
                 str = setStat("strength", budget, sum);
+                sum = str + def + mag + mDef + spd;
                 def = setStat("defence", budget, sum);
+                sum = str + def + mag + mDef + spd;
                 mag = setStat("magic", budget, sum);
+                sum = str + def + mag + mDef + spd;
                 mDef = setStat("magic defence", budget, sum);
+                sum = str + def + mag + mDef + spd;
                 spd = setStat("speed", budget, sum);
+                sum = str + def + mag + mDef + spd;
                 if (sum != budget) {
                     System.out.println("Invalid stats restarting.");
                 }
@@ -41,10 +46,9 @@ public class Player extends FightingCharacter{
     
     private void setPlayerName() {
         String input;
-        System.out.println("Enter your character's name:");
-        setName(in.nextLine());
-        
         do {
+            System.out.println("Enter your character's name:");
+            setName(in.nextLine());
             System.out.println("Your name is " + getName() + " are you happy with it? (y/n)");
             do {
                 input = in.nextLine();
@@ -77,6 +81,7 @@ public class Player extends FightingCharacter{
     private int setStat(String stat, int budget, int sum) {
         System.out.println("Your current number of stats is " + sum + ".");
         System.out.println("Your budget is " + budget + ".");
+        System.out.println("You have " + (budget - sum) + " points remaining.");
         System.out.println("What value would you like " + stat + " to be?");
         return in.nextInt();
     }
