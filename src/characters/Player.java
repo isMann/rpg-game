@@ -61,7 +61,7 @@ public class Player extends FightingCharacter{
     
     public void printStats() {
         System.out.println(getName() +"'s current stats are:");
-        System.out.println("Hit Points:\t" + getHP());
+        System.out.println("Hit Points:\t" + getMaxHP());
         System.out.println("Strength:\t" + getStr());
         System.out.println("Defence:\t" + getDef());
         System.out.println("Magic\t" + getMag());
@@ -70,7 +70,7 @@ public class Player extends FightingCharacter{
     }
     
     private void setStats(int HP, int str, int def, int mag, int mDef, int spd) {
-        setHP(HP);
+        setMaxHP(HP);
         setStr(str);
         setDef(def);
         setMag(mag);

@@ -7,7 +7,7 @@ import java.util.ArrayList;
 public class FightingCharacter {
 
     //General Stats
-    private int HP, str, def, mag, mDef, spd;
+    private int maxHP, currHP, tempHP, str, def, mag, mDef, spd;
     
     private ArrayList<Item> items;
     
@@ -25,8 +25,8 @@ public class FightingCharacter {
         return name;
     }
     
-    public void setHP(int HP) {
-        this.HP = HP;
+    public void setMaxHP(int maxHP) {
+        this.maxHP = maxHP;
     }
     
     public void setStr(int str) {
@@ -49,8 +49,16 @@ public class FightingCharacter {
         this.spd = spd;
     }
     
-    public int getHP() {
-        return HP;
+    public void setCurrHP(int currHP) {
+        this.currHP = currHP;
+    }
+    
+    public void setTempHP(int tempHP) {
+        this.tempHP = tempHP;
+    }
+    
+    public int getMaxHP() {
+        return maxHP;
     }
     
     public int getStr() {
@@ -71,6 +79,24 @@ public class FightingCharacter {
     
     public int getSpd() {
         return spd;
+    }
+    
+    public void addTempHP(int amount) {
+        tempHP = Math.max(amount, tempHP);
+    }
+    
+    public int heal(int amount){
+        int overflow;
+        overflow = (amount + currHP) - maxHP;
+        currHP = Math.min(amount + currHP, maxHP);
+        if (overflow < 0) overflow = 0;
+        return overflow;
+    }
+    
+    public boolean damage(int amount){
+        int temp = amount - tempHP;
+        amount -= tempHP;
+        
     }
     
     public void addItem(Item toAdd) {
