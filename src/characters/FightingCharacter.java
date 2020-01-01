@@ -112,7 +112,9 @@ public class FightingCharacter {
             currHP -= amount;
         }
         
-        dead = currHP > 0;
+        dead = currHP <= 0;
+        if (dead)
+            currHP = 0;
         return dead;
     }
     

@@ -10,13 +10,13 @@ public class Main {
         player.printStats();
     
         System.out.println("taking damage no temp hp");
-        player.damage(5);
+        System.out.println("dead " + player.damage(5));
         player.printStats();
         System.out.println("healing not to full");
-        player.heal(2);
+        System.out.println("overflow " + player.heal(2));
         player.printStats();
         System.out.println("healing past full");
-        player.heal(5);
+        System.out.println("overflow " + player.heal(5));
         player.printStats();
         System.out.println("adding temp hp");
         player.addTempHP(5);
@@ -28,10 +28,13 @@ public class Main {
         player.addTempHP(7);
         player.printStats();
         System.out.println("damaging not enough to remove all temp hp");
-        player.damage(3);
+        System.out.println("dead " + player.damage(3));
         player.printStats();
         System.out.println("damaging more than temp hp");
-        player.damage(10);
+        System.out.println("dead " + player.damage(10));
+        player.printStats();
+        System.out.println("killing player");
+        System.out.println("dead " + player.damage(20));
         player.printStats();
     }
 }
