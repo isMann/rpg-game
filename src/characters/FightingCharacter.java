@@ -81,6 +81,14 @@ public class FightingCharacter {
         return spd;
     }
     
+    public int getCurrHP() {
+        return currHP;
+    }
+    
+    public int getTempHP() {
+        return tempHP;
+    }
+    
     public void addTempHP(int amount) {
         tempHP = Math.max(amount, tempHP);
     }
@@ -94,9 +102,23 @@ public class FightingCharacter {
     }
     
     public boolean damage(int amount){
-        int temp = amount - tempHP;
+        boolean dead;
         amount -= tempHP;
+        if (amount < 0) {
+            tempHP = -amount;
+        }
+        else {
+            tempHP = 0;
+            currHP -= amount;
+        }
         
+        dead = currHP > 0;
+        return dead;
+    }
+    
+    public void rest(){
+        currHP = maxHP;
+        tempHP = 0;
     }
     
     public void addItem(Item toAdd) {

@@ -42,6 +42,7 @@ public class Player extends FightingCharacter{
                 }
             } while (!(input.equalsIgnoreCase("y") || input.equalsIgnoreCase("n")));
         } while (input.equalsIgnoreCase("n"));
+        rest();
     }
     
     private void setPlayerName() {
@@ -61,12 +62,14 @@ public class Player extends FightingCharacter{
     
     public void printStats() {
         System.out.println(getName() +"'s current stats are:");
-        System.out.println("Hit Points:\t" + getMaxHP());
-        System.out.println("Strength:\t" + getStr());
-        System.out.println("Defence:\t" + getDef());
-        System.out.println("Magic\t" + getMag());
-        System.out.println("Magic Defence:\t" + getMDef());
-        System.out.println("Speed:\t" + getSpd());
+        System.out.println("Maximum Hit Points:\t\t" + getMaxHP());
+        System.out.println("Current Hit Points:\t\t" + getCurrHP());
+        System.out.println("Temporary Hit points:\t" + getTempHP());
+        System.out.println("Strength:\t\t\t\t" + getStr());
+        System.out.println("Defence:\t\t\t\t" + getDef());
+        System.out.println("Magic\t\t\t\t\t" + getMag());
+        System.out.println("Magic Defence:\t\t\t" + getMDef());
+        System.out.println("Speed:\t\t\t\t\t" + getSpd());
     }
     
     private void setStats(int HP, int str, int def, int mag, int mDef, int spd) {
