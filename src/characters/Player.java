@@ -4,9 +4,12 @@ import java.util.Scanner;
 
 public class Player extends FightingCharacter{
     
+    private int level;
+    
     Scanner in;
     public Player(){
         in = new Scanner(System.in);
+        level = 1;
     }
     
     public void initStats(){
@@ -62,6 +65,7 @@ public class Player extends FightingCharacter{
     
     public void printStats() {
         System.out.println(getName() +"'s current stats are:");
+        System.out.println("Level:\t\t\t\t\t" + level);
         System.out.println("Maximum Hit Points:\t\t" + getMaxHP());
         System.out.println("Current Hit Points:\t\t" + getCurrHP());
         System.out.println("Temporary Hit points:\t" + getTempHP());
