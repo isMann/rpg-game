@@ -135,6 +135,10 @@ public class FightingCharacter {
         items.add(toAdd);
     }
     
+    public ArrayList<Item> getItem() {
+        return items;
+    }
+    
     public void equipWeapon(Weapon weapon){
         equippedWeapon = weapon;
     }
@@ -149,5 +153,13 @@ public class FightingCharacter {
     
     public void removeArmour() {
         equippedArmour = null;
+    }
+    
+    public Weapon getEquippedWeapon() {
+        return equippedWeapon;
+    }
+    
+    public Armour getEquippedArmour() {
+        return equippedArmour;
     }
 }
