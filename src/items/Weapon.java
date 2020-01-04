@@ -2,7 +2,14 @@ package items;
 
 import characters.FightingCharacter;
 
-public abstract class Weapon extends Item implements Equippable {
+public abstract class Weapon extends Item {
     
-    public abstract void remove();
+    public void remove(FightingCharacter user){
+    
+    }
+    
+    @Override
+    public void use(FightingCharacter user) {
+        user.equipWeapon(this);
+    }
 }

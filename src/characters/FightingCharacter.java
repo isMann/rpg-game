@@ -1,6 +1,7 @@
 package characters;
 
 import items.Item;
+import items.Weapon;
 
 import java.util.ArrayList;
 
@@ -9,12 +10,16 @@ public class FightingCharacter {
     //General Stats
     private int maxHP, currHP, tempHP, str, def, mag, mDef, spd;
     
+    private Weapon equippedWeapon;
+    
     private ArrayList<Item> items;
     
     private String name;
     
     public FightingCharacter(){
         items = new ArrayList<>();
+        equippedWeapon = null;
+        
     }
     
     public void setName(String name) {
@@ -89,6 +94,10 @@ public class FightingCharacter {
         return tempHP;
     }
     
+    public Weapon getEquippedWeapon() {
+        return equippedWeapon;
+    }
+    
     public void addTempHP(int amount) {
         tempHP = Math.max(amount, tempHP);
     }
@@ -125,5 +134,9 @@ public class FightingCharacter {
     
     public void addItem(Item toAdd) {
         items.add(toAdd);
+    }
+    
+    public void equipWeapon(Weapon weapon){
+        equippedWeapon = weapon;
     }
 }
