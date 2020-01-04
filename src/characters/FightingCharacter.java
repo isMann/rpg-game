@@ -1,5 +1,6 @@
 package characters;
 
+import items.Armour;
 import items.Item;
 import items.Weapon;
 
@@ -12,6 +13,8 @@ public class FightingCharacter {
     
     private Weapon equippedWeapon;
     
+    private Armour equippedArmour;
+    
     private ArrayList<Item> items;
     
     private String name;
@@ -19,7 +22,7 @@ public class FightingCharacter {
     public FightingCharacter(){
         items = new ArrayList<>();
         equippedWeapon = null;
-        
+        equippedArmour = null;
     }
     
     public void setName(String name) {
@@ -94,10 +97,6 @@ public class FightingCharacter {
         return tempHP;
     }
     
-    public Weapon getEquippedWeapon() {
-        return equippedWeapon;
-    }
-    
     public void addTempHP(int amount) {
         tempHP = Math.max(amount, tempHP);
     }
@@ -138,5 +137,17 @@ public class FightingCharacter {
     
     public void equipWeapon(Weapon weapon){
         equippedWeapon = weapon;
+    }
+    
+    public void removeWeapon(){
+        equippedWeapon = null;
+    }
+    
+    public void equipArmour(Armour armour){
+        equippedArmour = armour;
+    }
+    
+    public void removeArmour() {
+        equippedArmour = null;
     }
 }
